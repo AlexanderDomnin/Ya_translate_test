@@ -80,7 +80,7 @@ class BasePage():
     def auth_test_user(self):
         self.browser.find_element(*AutHPageLocators.EMAIL).send_keys('testik0102')
         self.browser.find_element(*AutHPageLocators.LOG_IN_BTN).click()
-        self.browser.find_element(*AutHPageLocators.PASSWORD).send_keys('Testik0103')
+        self.browser.find_element(*AutHPageLocators.PASSWORD).send_keys('Testik01023')
         self.browser.find_element(*AutHPageLocators.LOG_IN_BTN).click()
 
     def wait_page_loaded(self, timeout=60, check_js_complete=True,
