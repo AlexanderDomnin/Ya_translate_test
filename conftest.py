@@ -52,7 +52,6 @@ def browser(request):
             print('Browser logs:')
             for log in browser.get_log('browser'):
                 print(log)
-
         except:
             pass  # just ignore any errors here
 
