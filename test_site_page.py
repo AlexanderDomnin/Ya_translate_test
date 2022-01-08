@@ -1,6 +1,5 @@
 from .pages.main_page import MainPage
 from .pages.site_page import SitePage
-import pytest
 import allure
 
 @allure.feature('Работа вкладки сайты')
