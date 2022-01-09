@@ -19,6 +19,6 @@ class SitePage(BasePage):
         self.browser.find_element(*SitePageLocators.BTN_FOR_URL).click()
 
     def site_after_translate(self):
-        assert 'https://ya.ru/' == self.browser.find_element(*SitePageLocators.TR_SITE_INPUT).text, f"URL SITE not correct - {self.browser.find_element(*SitePageLocators.TR_SITE_INPUT).text}"
+        assert self.is_element_present(*SitePageLocators.TR_SITE_INPUT), f"URL SITE not page "
         assert self.is_element_present(*SitePageLocators.PROGRESS_TR), "NO Progress translation on page"
         assert self.is_element_present(*SitePageLocators.PAGE_TR), "NO Page translation on page"

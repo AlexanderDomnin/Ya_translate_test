@@ -12,7 +12,8 @@ class ProductPage(BasePage):
 
     def translate_is_correct(self):
         assert self.is_element_present(*BasePageLocators.AREA_TRANSLATION),"Translation form is not presented"
-        assert 'Тест' == self.browser.find_element(*BasePageLocators.TEXT_TRANSLATION).text, f"expected Translation to be {self.browser.find_element(*BasePageLocators.TEXT_TRANSLATION).text}"
+        text_tr = self.browser.find_element(*BasePageLocators.TEXT_TRANSLATION).text
+        assert text_tr == 'Тест', f"expected Translation to be {text_tr}"
 
     def auth_login(self):
         self.browser.find_element(*BasePageLocators.ICON_LOGIN).click()
@@ -25,8 +26,8 @@ class ProductPage(BasePage):
         assert self.is_element_present(*BasePageLocators.ICON_LOGIN), "No ICON for LOGIN on main page"
 
     def main_page_with_translate_correct_lang(self):
-        assert 'Английский' == self.browser.find_element(*BasePageLocators.SRC_LANG).text, f"SRC translation is not correct - {self.browser.find_element(*BasePageLocators.SRC_LANG).text}"
-        assert 'Русский' == self.browser.find_element(*BasePageLocators.DST_LANG).text, "DST translation is not correct"
+        assert 'АНГЛИЙСКИЙ' == self.browser.find_element(*BasePageLocators.SRC_LANG).text, f"SRC translation is not correct - {self.browser.find_element(*BasePageLocators.SRC_LANG).text}"
+        assert 'РУССКИЙ' == self.browser.find_element(*BasePageLocators.DST_LANG).text, "DST translation is not correct"
 
     def main_page_with_translate_correct_blocks(self):
         assert self.is_element_present(*BasePageLocators.EXAMPLE_BLOCK), "NO Example_block on page"
