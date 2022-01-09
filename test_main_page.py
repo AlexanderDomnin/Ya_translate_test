@@ -49,6 +49,7 @@ def test_should_all_elements_main_page_with_translate(browser):
     with allure.step("Открыть главную страницу"):
         page = MainPage(browser, link)
         page.open()
+        page.refresh()
     with allure.step("Добавить слово и проверить, что появился перевод"):
         product_page = ProductPage(browser, browser.current_url)
         product_page.text_in_translate()
